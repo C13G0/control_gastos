@@ -85,3 +85,25 @@ def reporte_detallado_por_mes():
             print(f"{gasto['fecha']} | {gasto['descripcion']} | {gasto['categoria']} | ${gasto['monto']}")
         print(f"\nTotal gastado en el mes {mes}: ${total}") 
 
+
+def mostrar_menu():
+    while True:
+        print("\nMENU PRINCIPAL")
+        print("1. Registrar gasto")
+        print("2. Ver gastos por mes")
+        print("3. Ver reporte del mes")
+        print("4. Salir")
+        
+        opcion = input("\nSelecciona una opcion: ")
+        
+        if opcion == "1":
+            registrar_gasto()
+        elif opcion == "2":
+            gastos_por_mes()
+        elif opcion == "3":
+            ver_reporte_mes()
+        elif opcion == "4":
+            print("\nHasta luego!")
+            break
+        else:
+            print("\nOpcion no valida, intenta de nuevo")
