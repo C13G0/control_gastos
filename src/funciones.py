@@ -101,9 +101,9 @@ def mostrar_menu():
         elif opcion == "2":
             gastos_por_mes()
         elif opcion == "3":
-            ver_reporte_mes()
+            reporte_detallado_por_mes()
         elif opcion == "4":
-            print("\nHasta luego!")
+            print("\nMuchas gracias por usar nuestros servicios. Son 50 lukas  :D")
             break
         else:
-            print("\nOpcion no valida, intenta de nuevo")
+            print("\nOpcion no valida, ingresa un numero del 1 al 4 segun el menu :D")
