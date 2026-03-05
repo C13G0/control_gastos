@@ -1,19 +1,7 @@
 
 
 
-
-
-categorias = [
-    "Gastos personales",
-    "Estudio",
-    "Trabajo",
-    "Proyectos",
-    "Necesidades básicas"
-]
-
-lista_gastos = []
-
-
+#Definimos lista de categorias y lista de gastos
 
 categorias = [
     "Gastos personales",
@@ -24,6 +12,9 @@ categorias = [
 ]
 
 gastos = []
+
+
+#Definimos la funcion registrar gasto
 
 def registrar_gasto():
     print("\n--- REGISTRAR NUEVO GASTO ---")
@@ -37,7 +28,7 @@ def registrar_gasto():
     opcion_categoria = input("Selecciona el número de la categoría: ")
     categoria = categorias[int(opcion_categoria) - 1]
 
-    
+
     monto = float(input("Ingresa el monto del gasto: "))
     gasto = {
         "fecha": fecha,
@@ -47,3 +38,26 @@ def registrar_gasto():
     }
     gastos.append(gasto)
     print("\n✅ Gasto registrado exitosamente!")
+
+
+
+
+
+#Definimos la funcion gastos por mes
+
+def gastos_por_mes():
+    print("\nGASTOS MENSUALES")
+    mes = input("Ingresa el mes que deseas consultar en formato (MM): ")
+    
+    gastos_por_mes = []
+    for gasto in gastos:
+        if gasto["fecha"].split("/")[1] == mes:
+            gastos_por_mes.append(gasto)
+
+
+    if len(gastos_por_mes) == 0:
+        print("\nNo tuviste gastos este mes :D")
+    else:
+        print(f"\nGastos que tuviste en el mes {mes}")
+        for gasto in gastos_del_mes:
+            print(f"📅 {gasto['fecha']} | 📝 {gasto['descripcion']} | 🏷️ {gasto['categoria']} | 💰 ${gasto['monto']}")
