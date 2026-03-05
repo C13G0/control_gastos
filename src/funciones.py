@@ -63,7 +63,7 @@ def gastos_por_mes():
             print(f"{gasto['fecha']} | {gasto['descripcion']} | {gasto['categoria']} | ${gasto['monto']}")
 
 
-#Definimos la funcion reporte detallado por mes
+#Definimos la funcion reporte detallado por mes.
 
 def reporte_detallado_por_mes():
     print("\nREPORTE DETALLADO DEL MES")
@@ -83,4 +83,5 @@ def reporte_detallado_por_mes():
         print(f"\nResumen del mes {mes}")
         for gasto in gastos_por_mes:
             print(f"{gasto['fecha']} | {gasto['descripcion']} | {gasto['categoria']} | ${gasto['monto']}")
-        print(f"\nTotal gastado en el mes {mes}: ${total}")
+        print(f"\nTotal gastado en el mes {mes}: ${total}") 
+
