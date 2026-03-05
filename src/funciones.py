@@ -17,7 +17,7 @@ gastos = []
 #Definimos la funcion registrar gasto
 
 def registrar_gasto():
-    print("\n--- REGISTRAR NUEVO GASTO ---")
+    print("\nREGISTRAR NUEVO GASTO")
     fecha = input("Ingresa la fecha (DD/MM/AAAA): ")
     descripcion = input("Ingresa la descripción del gasto: ")
 
@@ -37,7 +37,7 @@ def registrar_gasto():
         "monto": monto
     }
     gastos.append(gasto)
-    print("\n✅ Gasto registrado exitosamente!")
+    print("\n¡Gasto registrado correctamente!")
 
 
 
@@ -59,5 +59,28 @@ def gastos_por_mes():
         print("\nNo tuviste gastos este mes :D")
     else:
         print(f"\nGastos que tuviste en el mes {mes}")
-        for gasto in gastos_del_mes:
-            print(f"📅 {gasto['fecha']} | 📝 {gasto['descripcion']} | 🏷️ {gasto['categoria']} | 💰 ${gasto['monto']}")
+        for gasto in gastos_por_mes:
+            print(f"{gasto['fecha']} | {gasto['descripcion']} | {gasto['categoria']} | ${gasto['monto']}")
+
+
+#Definimos la funcion reporte detallado por mes
+
+def reporte_detallado_por_mes():
+    print("\nREPORTE DETALLADO DEL MES")
+    mes = input("Ingresa el mes que deseas consultar (Usa formato MM): ")
+    
+    total = 0
+    gastos_por_mes = []
+    for gasto in gastos:
+        if gasto["fecha"].split("/")[1] == mes:
+            gastos_por_mes.append(gasto)
+            total += gasto["monto"]
+
+
+    if len(gastos_por_mes) == 0:
+        print("\nNo tuviste gastos este mes :D")
+    else:
+        print(f"\nResumen del mes {mes}")
+        for gasto in gastos_por_mes:
+            print(f"{gasto['fecha']} | {gasto['descripcion']} | {gasto['categoria']} | ${gasto['monto']}")
+        print(f"\nTotal gastado en el mes {mes}: ${total}")
